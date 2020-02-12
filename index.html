@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title></title>
-    <script src="libs/jquery-2.1.4.min.js"></script>
+    <script src="libs/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="libs/jquery.json-2.4.min.js"></script>
     <link rel="stylesheet" type="text/css" href="libs/w2ui-1.5.rc1.min.css" />
     <script type="text/javascript" src="libs/w2ui-1.5.rc1.min.js"></script>
-    <script type="text/javascript" src="main.js" ></script>
+    <script type="text/javascript" src="js/main.js" ></script>
 </head>
 
 <body>
-    <div id="main" style="width: 100%; height: 100px"></div>
-    <div id="button" style="padding: 10px 10px">
-        <button class="w2ui-btn w2ui-btn-red">Run</button>
+    <div class="w2ui-field">
+        <label for="Command" size="60">Команда:</label>
+        <div>
+            <input id="input_cmd" minlength="4" maxlength="8" size="40"/>
+        </div>
     </div>
+    <div class="w2ui-field">
+        <label>Сообщение:</label>
+        <div>
+        <textarea id="textarea_cmd" name="field_textarea" style="width: 385px; height: 80px;">Lorem Amet velit nemo nemo quos dolor Praesentium velit tempore molestias facere error Quibusdam ullam minima temporibus consequatur esse culpa nostrum ducimus? Necessitatibus amet fuga necessitatibus cum ipsa Saepe maiores minus.</textarea>
+        </div>
+    </div>
+    <div class="w2ui-button">
+        <input id="button_cmd" type="button" value="Отправить" name="reset"/>
+    </div>
+</div>
 </body>
 </html>
