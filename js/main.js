@@ -11,7 +11,22 @@ jQuery(function() {
     var btn = $("#button_cmd").button();
     var msg = $("#textarea_status");
     var stat= $("#input_status");
-
+    var who = $("#who");
+    var log = function(form, text) {
+        const now_m = new Date().format("yyyy-MM-dd HH:mm:ss fff");
+        form.val(form.val()+now_m+": "+text+"\n");
+    }
+    who.on('click', function () {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          //console.log(this.responseText);
+            log(msg, this.responseText);
+        }
+      };
+      xhttp.open("POST", "whoami.php", true);
+      xhttp.send();
+    });
     btn.on('click', function () {
     //console.log($(this));
     //console.log("Send command: "+cmd.val());
