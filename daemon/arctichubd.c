@@ -10,7 +10,7 @@
    of this code is permitted without attribution to the author.
 
 ***************************************************************************/
-#ifdef __GNUC__
+#ifdef __GNUC__
 #define _GNU_SOURCE 
 #endif
 

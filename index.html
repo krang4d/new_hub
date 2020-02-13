@@ -3,29 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script src="libs/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="libs/jquery.json-2.4.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="libs/w2ui-1.5.rc1.min.css" />
-    <script type="text/javascript" src="libs/w2ui-1.5.rc1.min.js"></script>
-    <script type="text/javascript" src="js/main.js" ></script>
 </head>
 
 <body>
+<fieldset>
+    <legend>Запрос</legend>
     <div class="w2ui-field">
-        <label for="Command" size="60">Команда:</label>
+        <label for="selectmenu_cmd" size="60" style="margin: 0px 5px">Команда:</label>
+        <select id="selectmenu_cmd">
+            <option selected="selected">Старт</option>
+            <option>Стоп</option>
+            <option>Сброс</option>
+            <option>Рестарт</option>
+        </select>
+        <!--<input id="input_cmd" type="text" minlength="4" maxlength="8" size="40"/> -->
+    </div>
+    <div class="w2ui-field">
+        <label for="textarea_cmd">Текст:</label>
         <div>
-            <input id="input_cmd" minlength="4" maxlength="8" size="40"/>
+            <textarea id="textarea_cmd" name="field_textarea" style="width: 257px; height: 80px;">Adipisicing ad deleniti asperiores nesciunt dolorum Corrupti similique officia quos.</textarea>
         </div>
     </div>
+    <button id="button_cmd" type="button" style="margin: 0px 130px">Отправить</button>
+</fieldset>
+<fieldset>
+    <legend>Ответ</legend>
     <div class="w2ui-field">
-        <label>Сообщение:</label>
-        <div>
-        <textarea id="textarea_cmd" name="field_textarea" style="width: 385px; height: 80px;">Lorem Amet velit nemo nemo quos dolor Praesentium velit tempore molestias facere error Quibusdam ullam minima temporibus consequatur esse culpa nostrum ducimus? Necessitatibus amet fuga necessitatibus cum ipsa Saepe maiores minus.</textarea>
-        </div>
+        <label for="input_status" size="40" style="margin: 0px 5px">Статус:</label>
+        <input id="input_status" type="text" minlength="4" maxlength="8" size="25" readonly/>
     </div>
-    <div class="w2ui-button">
-        <input id="button_cmd" type="button" value="Отправить" name="reset"/>
+    <div class="w2ui-field">
+        <label for="input_status" size="40" style="margin: 0px 5px">Сообщения:</label>
+        <textarea id="textarea_status" name="field_textarea" style="width: 100%; height: 200px;" readonly></textarea>
     </div>
+</fieldset>
 </div>
+<script src="libs/jquery-3.2.1.min.js"></script>
+<script src="libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="libs/jquery.json-2.4.min.js"></script>
+<script type="text/javascript" src="libs/MicrosoftAjax.js"></script>
+<script type="text/javascript" src="libs/w2ui-1.5.rc1.min.js"></script>
+<script type="text/javascript" src="js/main.js" ></script>
+<link rel="stylesheet" type="text/css" href="libs/w2ui-1.5.rc1.min.css" />
+<link rel="stylesheet" type="text/css" href="libs/jquery-ui.min.css" />
 </body>
 </html>
