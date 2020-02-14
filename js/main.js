@@ -14,7 +14,7 @@ jQuery(function() {
     var who = $("#who");
     var log = function(form, text) {
         const now_m = new Date().format("yyyy-MM-dd HH:mm:ss fff");
-        form.val(form.val()+now_m+": "+text+"\n");
+        form.val(now_m+": "+text+"\n"+form.val() );
     }
     who.on('click', function () {
       var xhttp = new XMLHttpRequest();
@@ -32,8 +32,7 @@ jQuery(function() {
     //console.log("Send command: "+cmd.val());
         JsonData.message=txt.val();
         JsonData.command=cmd.val();
-        const now_m = new Date().format("yyyy-MM-dd HH:mm:ss fff");
-        msg.val(msg.val()+now_m+": Запрос "+$.toJSON(JsonData)+"\n");
+        log(msg, ": Запрос "+$.toJSON(JsonData));
         $.ajax({
             type: "POST", //метод запроса, можно POST можно GET (если опустить, то по умолчанию GET)
             url: "catcher.php",
@@ -42,7 +41,7 @@ jQuery(function() {
         .done(function(data) {                      //функция выполняется при удачном заверщение
             const now_m = new Date().format("yyyy-MM-dd HH:mm:ss fff");
             //console.log($.parseJSON(data).test1);        //выведем в консоль содержимое test1
-            msg.val(msg.val()+now_m+": Ответ "+data+"\n");
+            log(msg, ": Ответ "+data);
         })
     });
 });
