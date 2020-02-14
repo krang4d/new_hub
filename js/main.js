@@ -32,7 +32,7 @@ jQuery(function() {
     //console.log("Send command: "+cmd.val());
         JsonData.message=txt.val();
         JsonData.command=cmd.val();
-        log(msg, ": Запрос "+$.toJSON(JsonData));
+        log(msg, "Запрос "+$.toJSON(JsonData));
         $.ajax({
             type: "POST", //метод запроса, можно POST можно GET (если опустить, то по умолчанию GET)
             url: "catcher.php",
@@ -41,7 +41,7 @@ jQuery(function() {
         .done(function(data) {                      //функция выполняется при удачном заверщение
             const now_m = new Date().format("yyyy-MM-dd HH:mm:ss fff");
             //console.log($.parseJSON(data).test1);        //выведем в консоль содержимое test1
-            log(msg, ": Ответ "+data);
+            log(msg, "Ответ "+data);
         })
     });
 });
