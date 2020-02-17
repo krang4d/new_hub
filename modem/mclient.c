@@ -24,7 +24,7 @@ int main(int argc, char ** argv)
   srvr_name.sun_family = AF_UNIX;
   strcpy(srvr_name.sun_path, SOCK_NAME);
   connect(sock, srvr_name.sun_path, strlen(srvr_name.sun_path));
-  strcpy(buf, "Hello, Unix sockets!");
+  strcpy(buf, "Hi, Unix sockets!");
   count=sendto(sock, buf, strlen(buf), 0, &srvr_name,
     strlen(srvr_name.sun_path) + sizeof(srvr_name.sun_family));
   printf("Передана строка: %s - что составляет %i байт\n",buf,count);
