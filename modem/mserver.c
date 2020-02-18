@@ -114,6 +114,7 @@ main(int argc, char *argv[])
        /* Send result. */
 
        sprintf(buffer, "%d", result);
+       printf("Clien send: %d\n", buffer);
        ret = write(data_socket, buffer, BUFFER_SIZE);
 
        if (ret == -1) {
